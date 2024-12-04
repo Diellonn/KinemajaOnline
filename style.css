@@ -4,7 +4,6 @@
     box-sizing: border-box;
     
 }
-
 body {
     font-family: Arial, sans-serif;
     background-image: url(image/background.jpg);
@@ -63,7 +62,6 @@ header img {
     margin-right: 15px; 
  
 }
-
 .search input{
     font-size: 18px; 
     padding: 7px 10px; 
@@ -88,7 +86,7 @@ header img {
 .home{
     display: flex;
     justify-content: center;
-    margin-top: 120px;
+    margin-top: 80px;
     
 }
 .wrapper {
@@ -103,12 +101,10 @@ header img {
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.4s ease;
 }
-
 .wrapper:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 50px rgba(0, 0, 0, 0.5);
 }
-
 h2 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -116,17 +112,14 @@ h2 {
     font-weight: 800;
     text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
-
 form {
     display: flex;
     flex-direction: column;
 }
-
 .input-field {
     position: relative;
     margin-bottom: 20px;
 }
-
 .input-field input {
     background: rgba(40, 40, 40, 0.8);
     border: 1px solid #555;
@@ -137,11 +130,17 @@ form {
     width: 100%;
     transition: border-color 0.9s;
 }
-
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.input-row .input-field {
+    flex: 1;
+}
 .input-field input:focus {
     border-color: black;
 }
-
 .input-field label {
     position: absolute;
     top: 50%;
@@ -152,14 +151,12 @@ form {
     pointer-events: none;
     transition: top 0.3s, font-size 0.3s, color 0.3s;
 }
-
 .input-field input:focus + label,
 .input-field input:not(:placeholder-shown) + label {
     top: -8px;
     font-size: 0.8rem;
     color: white;
 }
-
 .forget {
     display: flex;
     justify-content: space-between;
@@ -168,22 +165,18 @@ form {
     margin-bottom: 20px;
     color: #bbb;
 }
-
 .forget input[type="checkbox"] {
     margin-right: 8px;
     accent-color: white;
 }
-
 .forget a {
     color: white;
     text-decoration: underline;
     transition: color 0.3s;
 }
-
 .forget a:hover {
     color: white;
 }
-
 button {
     background-color: white;
     color: #1a1a1a;
@@ -195,27 +188,23 @@ button {
     font-size: 16px;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
-
 button:hover {
     background-color: red;
     color:white;
     transition:all .50s;
     box-shadow: 0 4px 10px rgba(255, 187, 0, 0.3);
 }
-
 .wrapper p {
     color: #ccc;
     font-size: 0.9rem;
     
 }
-
 .wrapper p a {
     color: white;
     text-decoration:underline;
     font-weight: bold;
     transition: color 0.3s;
 }
-
 .wrapper p a:hover {
     transition: all .50s;
     color: red;
