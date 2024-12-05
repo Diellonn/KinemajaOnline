@@ -221,3 +221,42 @@ button:hover {
     color: red;
     
 }
+.movies {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+}
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; 
+    margin-top: 20px;
+}
+.movie {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 200px;
+    flex-shrink: 0; 
+}
+.movie:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+.movie img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.movie h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+.movie p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
