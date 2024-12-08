@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KinemajaOnline</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
+    <script src="validimi.js"></script>
 </head>
 <body>
    
@@ -24,26 +25,26 @@
 
                 <div class="input-row">
                     <div class="input-field">
-                        <input type="text" name="firstname" placeholder="Emri" required>
+                        <input type="text" id="emri" name="firstname" placeholder="Emri" required>
                     </div>
                     <div class="input-field">
-                        <input type="text" name="lastname" placeholder="Mbiemri" required>
+                        <input type="text" id="mbiemri" name="lastname" placeholder="Mbiemri" required>
                     </div>
                 </div>
                 
                 <div class="input-field">
-                    <input type="email" name="email" placeholder="Shtyp email-in" required>
+                    <input type="email" id="adresaEmail" name="email" placeholder="Shtyp email-in" required>
                 </div>
 
                 <div class="input-field">
-                    <input type="password" name="password" placeholder="Shtyp password-in" required>
+                    <input type="password" id="pass" name="password" placeholder="Shtyp password-in" required>
                 </div>
 
                 <div class="input-field">
-                    <input type="password" name="password" placeholder="Rishtyp password-in" required>
+                    <input type="password" id="konfirmoPass" name="password" placeholder="Rishtyp password-in" required>
                 </div>
                 
-                <button type="submit">Regjistrohu</button>
+                <button type="submit" id="registerBtn">Regjistrohu</button>
                 <p>Keni ndonje llogari <a href="loginform.html">Login</a></p>
     
             </form>
