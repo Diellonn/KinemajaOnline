@@ -279,3 +279,51 @@ button:hover {
     font-size: 0.8rem;
     color: white;
 }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(20, 20, 20, 0.9);
+    border-radius: 12px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6);
+    min-width: 220px;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    transform: translateY(20px);
+    opacity: 0;
+}
+.dropdown-content a {
+    color: rgba(255, 255, 255, 0.85);
+    padding: 12px 18px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+.dropdown-content a:hover {
+    background-color: rgba(255, 187, 0, 0.9);
+    color: #1a1a1a;
+    padding-left: 25px; 
+    font-weight: bold;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+}
+.dropdown-content a::before {
+    content: '✦';
+    color: rgba(255, 187, 0, 0.9); 
+    margin-right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+}
+.dropdown-content a:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
+}
