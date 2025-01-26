@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="password" id="konfirmoPass" name="password" placeholder="Rishtyp password-in" required>
                 </div>
                 <button type="submit" id="registerBtn">Regjistrohu</button>
-                <p>Keni ndonje llogari <a href="loginform.html">Login</a></p>
+                <p>Keni ndonje llogari <a href="login.php">Login</a></p>
             </form>
             <?php if (isset($message)) : ?>
                 <p><?php echo $message; ?></p>

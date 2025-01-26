@@ -35,5 +35,26 @@ class User {
             return "Error: " . $e->getMessage();
         }
     }
+    public function login($email, $password): mixed {
+        try {
+            $sql = "SELECT * FROM users WHERE email = :email";
+            $stmt = $this->db->conn->prepare($sql);
+            $stmt->bindParam(':email', $email);
+            $stmt->execute();
+            
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            if ($user) {
+                if (password_verify($password, $user['password'])) {
+                    return $user;
+                } else {
+                    return "Password-i eshte gabim.";
+                }
+            } 
+            return "Kjo llogari nuk ekzsiton.";
+        } catch (PDOException $e) {
+            return "Error: " . $e->getMessage();
+        }
+    }
 }
 ?>
