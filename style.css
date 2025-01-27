@@ -327,3 +327,41 @@ button:hover {
     opacity: 1;
     transform: scale(1.2);
 }
+.welcome-message {
+    color: white;
+    font-size: 18px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+.movie-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(20, 20, 20, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+}
+.movie-info {
+    margin-top: 20px;
+}
+.movie-details h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.movie-details p {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+.movie-details iframe {
+    border-radius: 8px;
+}
