@@ -78,5 +78,22 @@ class User {
         return "Error: " . $e->getMessage();
         }
     }
+    public function getAllUsers() {
+        $query = "SELECT * FROM users";
+        $stmt = $this->db->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function deleteUser($user_id) {
+        $query = "DELETE FROM users WHERE id = :user_id";
+        $stmt = $this->db->conn->prepare($query);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+            return "Përdoruesi u fshi me sukses!";
+        } else {
+            return "Gabim gjatë fshirjes së përdoruesit.";
+        }
+    }
 }
 ?>

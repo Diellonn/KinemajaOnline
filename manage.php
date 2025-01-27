@@ -68,6 +68,9 @@ $movies = $movie->getAllMovies();
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
             <a href="mesazhet.php" class="messages-link">Mesazhet</a>
         <?php endif; ?>
+        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+            <a href="perdoruesit.php">Perdoruesit</a>
+        <?php endif; ?>
     </div>
     <div class="loginform">
         <a href="logout.php" class="logout-link">Logout</a>
