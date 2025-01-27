@@ -3,9 +3,9 @@ session_start();
 require_once('User.php');
 $email = $password = "";
 $errorMessage = "";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
-
     $user = new User();
     $userData = $user->login($email, $password);
 
@@ -14,13 +14,13 @@ $errorMessage = "";
         $_SESSION['user_name'] = $userData['emri'] . ' ' . $userData['mbiemri'];
         $_SESSION['role'] = $userData['roli'];
 
-        header("Location: KinemajaOnline.html");
+        header("Location: KinemajaOnline.php");
         exit();
     } else {
-        $errorMessage = $userData;
+        $errorMessage = $userData; 
+    }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +34,7 @@ $errorMessage = "";
 <header>
     <img src="image/logo.png" alt="">
     <div class="nav-menu">
-        <a href="KinemajaOnline.html">Ballina</a>
+        <a href="KinemajaOnline.php">Ballina</a>
     </div>
 </header>
 
