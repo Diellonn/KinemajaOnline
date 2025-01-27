@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(image/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(51, 51, 51, 0.6);
+    backdrop-filter: blur(10px);
+    color: white;
+}
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.nav-menu a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 10px;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+}
+.nav-menu a:hover {
+    font-size: 20px;
+    color: #ffffff;
+}
+.nav-menu a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.5s;
+}
+.nav-menu a:hover:after {
+    width: 100%;
+}
+.nav-menu a:focus, .nav-menu a:active {
+    outline: none;
+    color: #ffffff;
+}
+.loginform a{
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px 15px;
+    text-decoration: none;
+    transition: all .50s;
+    font-size: 20px;
+}
+.loginform a:hover{
+    background-color: white;
+    color: black;
+}
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+}
+.add-movie,
+.movie-list {
+    width: 48%;
+}
+.add-movie form {
+    display: flex;
+    flex-direction: column;
+}
+.add-movie label,
+.add-movie input,
+.add-movie button {
+    margin-bottom: 15px;
+}
+.add-movie input {
+    padding: 10px;
+    font-size: 16px;
+}
+.add-movie button {
+    background-color: white;
+    color: #1a1a1a;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.add-movie button:hover {
+    background-color: red;
+    color: white;
+    transition: all .50s;
+    box-shadow: 0 4px 10px rgba(255, 187, 0, 0.3);
+}
+.movie-list table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.movie-list th, .movie-list td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.movie-list img {
+    width: 100px;
+    border-radius: 8px;
+}
+.movie-list button {
+    background-color: red;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.movie-list button:hover {
+    background-color: darkred;
+}
