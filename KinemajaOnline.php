@@ -39,7 +39,7 @@
         </div>
         <script src="script.js"></script>
         <a href="seriale.html">Seriale</a>
-        <a href="Kontakti.html">Kontakti</a>
+        <a href="Kontakti.php">Kontakti</a>
     </div>
     <div class="search">
         <input type="search" placeholder="Kerko">

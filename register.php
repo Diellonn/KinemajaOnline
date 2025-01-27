@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header>  
         <img src="image/logo.png" alt="Logo">
         <div class="nav-menu">
-            <a href="KinemajaOnline.html">Ballina</a>
+            <a href="KinemajaOnline.php">Ballina</a>
         </div>
     </header>
     <section class="home">
