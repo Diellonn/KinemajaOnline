@@ -65,6 +65,9 @@ $movies = $movie->getAllMovies();
     <h1>Admin-<?php echo htmlspecialchars($_SESSION['user_name']);?></h1>
     <div class="nav-menu">
         <a href="KinemajaOnline.php" class="home-link">Kthehu te Ballina</a>
+        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
+            <a href="mesazhet.php" class="messages-link">Mesazhet</a>
+        <?php endif; ?>
     </div>
     <div class="loginform">
         <a href="logout.php" class="logout-link">Logout</a>

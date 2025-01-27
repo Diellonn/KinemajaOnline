@@ -56,5 +56,27 @@ class User {
             return "Error: " . $e->getMessage();
         }
     }
+    public function getAllMessages() {
+        try {
+            $query = "SELECT * FROM contacts";
+            $stmt = $this->db->conn->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        catch (PDOException $e) {
+        return "Error: " . $e->getMessage();
+        }
+    }
+    public function deleteMessage($message_id) {
+        try {
+            $query = "DELETE FROM contacts WHERE id = :message_id";
+            $stmt = $this->db->conn->prepare($query);
+            $stmt->bindParam(':message_id', $message_id, PDO::PARAM_INT);
+            return $stmt->execute();
+        }
+        catch (PDOException $e) {
+        return "Error: " . $e->getMessage();
+        }
+    }
 }
 ?>
