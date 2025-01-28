@@ -27,14 +27,12 @@ class Movie {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function getYouTubeLink($movie_id) {
-        $query = "SELECT youtube_link FROM movies WHERE id = :movie_id";
+    public function getYouTubeLink($id) {
+        $query = "SELECT * FROM movies WHERE id = :id";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':movie_id', $movie_id, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return $result ? $result['youtube_link'] : null;
+        return $stmt->fetch(PDO::FETCH_ASSOC);   
     }
 }
 ?>

@@ -4,14 +4,19 @@ include 'database.php';
 include 'Movie.php';
 
 $db = new Database();
-$conn = $db->conn;
 
-$movie = new Movie($conn);
+$movie = new Movie($db->conn);
 
-$movies = $movie->getAllMovies();
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $movie_id = $_GET['id'];
+    $movie_details = $movie->getYouTubeLink($movie_id);
 
-if ($movies === false) {
-    echo "Gabim gjatë ngarkimit të të dhënave nga baza e të dhënave.";
+    if ($movie_details === false) {
+        echo "Gabim gjatë ngarkimit të të dhënave nga baza e të dhënave.";
+        exit;
+    }
+} else {
+    echo "Filmi nuk ekziston.";
     exit;
 }
 ?>
@@ -97,18 +102,16 @@ if ($movies === false) {
     <?php endif; ?>
     </header>
     <div class="movie-list">
-        <?php foreach ($movies as $movie): ?>
-            <div class="movie-container">
-                <?php if (!empty($movie['youtube_link'])): ?>
-                    <iframe class="movie-iframe" src="<?php echo htmlspecialchars($movie['youtube_link']); ?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <?php endif; ?>
+        <div class="movie-container">
+            <?php if (!empty($movie_details['youtube_link'])): ?>
+                <iframe class="movie-iframe" src="<?php echo htmlspecialchars($movie_details['youtube_link']); ?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <?php endif; ?>
 
-                <div class="movie-info">
-                    <div class="movie-title"><?php echo htmlspecialchars($movie['title']); ?></div>
-                    <div class="movie-genre"><?php echo htmlspecialchars($movie['genre']); ?></div>
-                </div>
+            <div class="movie-info">
+                <div class="movie-title"><?php echo htmlspecialchars($movie_details['title']); ?></div>
+                <div class="movie-genre"><?php echo htmlspecialchars($movie_details['genre']); ?></div>
             </div>
-        <?php endforeach; ?>
+        </div>
     </div>
 </body>
 </html>
