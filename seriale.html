@@ -5,169 +5,343 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KinemajaOnline - Seriale</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+
+    .serialet {
+        flex: 0 0 auto;
+        width: 140px; 
+        margin-right: 25px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+        background: rgba(255, 255, 255, 0.1);
+        flex-shrink: 0; 
+    }
+    .serialet img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    .serialet h3 {
+        margin-top: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .serialet p {
+        font-size: 0.9rem;
+    }
+    .serialet i {
+        font-size: 0.9rem;
+        color: gray;
+    }
+    .slider-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin-top: 30px; 
+    }
+    .serialet-slider {
+        display: flex;
+        animation: slide 15s linear infinite;
+        transition: transform 0.5s ease;
+    }
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+@media screen and (max-width: 1024px) {
+    .serialet {
+        width: 120px;
+        margin-right: 15px;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search input {
+        width: 100%;
+    }
+    .serialet {
+        width: 100px;
+        margin-right: 10px;
+    }
+    .serialet-slider {
+        animation: none;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+}
+@media screen and (max-width: 480px) {
+    .serialet {
+        width: 90px;
+        margin-right: 5px;
+    }
+    .slider-container {
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .search input {
+        width: 100%;
+    }
+}
+
+
+    </style>
 </head>
 <body>
-   
-        <header>  
-            <a href="#"><img src="image/logo.png" alt=""></a>
-            <div class="nav-menu">
-                
-                <a href="KinemajaOnline.php" id="homeLink">Ballina</a>
-                <div class="dropdown">
-                    <a href="#">Zhanri</a>
-                    <div class="dropdown-content">
-                        <a href="#" data-genre="Aksion">Aksion</a>
-                        <a href="#" data-genre="Drame">Drame</a>
-                        <a href="#" data-genre="Thriller">Thriller</a>
-                        <a href="#" data-genre="Romance">Romance</a>
-                        <a href="#" data-genre="Komedi">Komedi</a>
-                        <a href="#" data-genre="Sport">Sport</a>
-                    </div>
+    <header>
+        <a href="#"><img src="image/logo.png" alt=""></a>
+        <div class="nav-menu">
+            <a href="KinemajaOnline.php" id="homeLink">Ballina</a>
+            <div class="dropdown">
+                <a href="#">Zhanri</a>
+                <div class="dropdown-content">
+                    <a href="#" data-genre="Aksion">Aksion</a>
+                    <a href="#" data-genre="Drame">Drame</a>
+                    <a href="#" data-genre="Thriller">Thriller</a>
+                    <a href="#" data-genre="Romance">Romance</a>
+                    <a href="#" data-genre="Komedi">Komedi</a>
+                    <a href="#" data-genre="Sport">Sport</a>
                 </div>
-                
-                <a href="seriale.html">Seriale</a>
-                <a href="kontakti.php">Kontakti</a>
-                <script src="script.js"></script>
-
+            </div>
+            <a href="seriale.html">Seriale</a>
+            <a href="kontakti.php">Kontakti</a>
         </div>
         <div class="search">
             <input type="search" placeholder="Kerko">
         </div>
         <div class="loginform">
             <a href="login.php">Login</a>
-        </div> 
-        </header>
-        <section class="movies">
-            <h2>Serialet e Fundit</h2>
-            <div class="movie-grid">
-                <div class="movie">
-                    <img src="serialet/gameofthrones.jpg" alt="Seriali 1">
-                    <h3>Game of Thrones</h3>
-                    <p>Zhanri: Fantasy-Drama</p>
-                    <br>
-                    <i>Seasons 8</i>
+        </div>
+    </header>
+
+    <section class="movies">
+        <h2>Serialet e Fundit</h2>
+        <div class="movie-grid">
+            <section class="slider-container">
+                <div class="serialet-slider" id="serialetSlider">
+                    <div class="serialet">
+                        <img src="serialet/gameofthrones.jpg" alt="Game of Thrones">
+                        <h3>Game of Thrones</h3>
+                        <p>Zhanri: Fantasy-Drama</p>
+                        <i>Seasons 8</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/breakingbad.jpg" alt="Breaking Bad">
+                        <h3>Breaking Bad</h3>
+                        <p>Zhanri: Thriller-Crime</p>
+                        <i>Seasons 5</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/thewitcher.jpg" alt="The Witcher">
+                        <h3>The Witcher</h3>
+                        <p>Zhanri: Sci-Fi-Horror</p>
+                        <i>Seasons 3</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/lacasadepapel.jpg" alt="Money Heist">
+                        <h3>Money Heist</h3>
+                        <p>Zhanri: Thriller</p>
+                        <i>Seasons 5</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/prisonbreak.jpg" alt="Prison Break">
+                        <h3>Prison Break</h3>
+                        <p>Zhanri: Drama</p>
+                        <i>Seasons 5</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/tulsaking.jpg" alt="Tulsa King">
+                        <h3>Tulsa King</h3>
+                        <p>Zhanri: Drama</p>
+                        <i>Seasons 2</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/outerbanks.jpg" alt="Outer Banks">
+                        <h3>Outer Banks</h3>
+                        <p>Zhanri: Drama</p>
+                        <i>Seasons 4</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/dragonball.jpg" alt="Dragon Ball DAIMA">
+                        <h3>Dragon Ball DAIMA</h3>
+                        <p>Zhanri: Animation</p>
+                        <i>Seasons 1</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/vikings.jpg" alt="Vikings">
+                        <h3>Vikings</h3>
+                        <p>Zhanri: History</p>
+                        <i>Seasons 6</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/thepenguin.jpg" alt="The Penguin">
+                        <h3>The Penguin</h3>
+                        <p>Zhanri: Drama</p>
+                        <i>Seasons 1</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/neymar.jpg" alt="Neymar: The Perfect Chaos">
+                        <h3>Neymar: The Perfect Chaos</h3>
+                        <p>Zhanri: Documentary</p>
+                        <i>Seasons 1</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/masteroftheair.jpg" alt="Master of the Air">
+                        <h3>Master of the Air</h3>
+                        <p>Zhanri: Drama</p>
+                        <i>Seasons 1</i>
+                    </div>
+                    <div class="serialet">
+                        <img src="serialet/ninja.jpg" alt="House of Ninjas">
+                        <h3>House of Ninjas</h3>
+                        <p>Zhanri: Drama</p>
+                        <i>Seasons 1</i>
+                    </div>
                 </div>
-                <div class="movie">
-                    <img src="serialet/breakingbad.jpg" alt="Seriali 2">
-                    <h3>Breaking Bad</h3>
-                    <p>Zhanri: Thriller-Crime</p>
-                    <br>
-                    <i>Seasons 5</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/thewitcher.jpg" alt="Seriali 3">
-                    <h3>The Witcher</h3>
-                    <p>Zhanri: Sci-Fi-Horror</p>
-                    <br>
-                    <i>Seasons 3</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/lacasadepapel.jpg" alt="Seriali 4">
-                    <h3>Money Heist</h3>
-                    <p>Zhanri: Thriller</p>
-                    <br>
-                    <i>Seasons 5</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/prisonbreak.jpg" alt="Seriali 5">
-                    <h3>Prison Break</h3>
-                    <p>Zhanri: Drama</p>
-                    <br>
-                    <i>Seasons 5</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/tulsaking.jpg" alt="Seriali 5">
-                    <h3>Tulsa King</h3>
-                    <p>Zhanri: Drama</p>
-                    <br>
-                    <i>Seasons 2</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/outerbanks.jpg" alt="Seriali 5">
-                    <h3>Outer Banks</h3>
-                    <p>Zhanri: Drama</p>
-                    <br>
-                    <i>Seasons 4</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/dragonball.jpg" alt="Seriali 5">
-                    <h3>Dragon Ball DAIMA</h3>
-                    <p>Zhanri: Animation</p>
-                    <br>
-                    <i>Seasons 1</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/vikings.jpg" alt="Seriali 5">
-                    <h3>Vikings</h3>
-                    <p>Zhanri: History</p>
-                    <br>
-                    <i>Seasons 6</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/thepenguin.jpg" alt="Seriali 5">
-                    <h3>The Penguin</h3>
-                    <p>Zhanri: Drama</p>
-                    <br>
-                    <i>Seasons 1</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/neymar.jpg">
-                    <h3>Neymar: The Perfect Chaos</h3>
-                    <p>Zhanri: Documentary</p>
-                    <br>
-                    <i>Seasons 1</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/masteroftheair.jpg" alt="Seriali 5">
-                    <h3>Master of the Air</h3>
-                    <p>Zhanri: Drama</p>
-                    <br>
-                    <i>Seasons 1</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/ninja.jpg" alt="Seriali 5">
-                    <h3>House of Ninjas</h3>
-                    <p>Zhanri: Drama</p>
-                    <br>
-                    <i>Seasons 1</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/newbandits.jpg" alt="Seriali 5">
-                    <h3>New Bandits</h3>
-                    <p>Zhanri: Drama</p>
-                    <br>
-                    <i>Seasons 1</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/reacher.jpg" alt="Seriali 5">
-                    <h3>Reacher</h3>
-                    <p>Zhanri: Aksion</p>
-                    <br>
-                    <i>Seasons 2</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/berlin.jpg" alt="Seriali 5">
-                    <h3>Berlin</h3>
-                    <p>Zhanri: Drama</p>
-                    <br>
-                    <i>Seasons 1</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/lupin.jpg" alt="Seriali 5">
-                    <h3>Lupin</h3>
-                    <p>Zhanri: Thriller</p>
-                    <br>
-                    <i>Seasons 3</i>
-                </div>
-                <div class="movie">
-                    <img src="serialet/fubar.jpg" alt="Seriali 5">
-                    <h3>Fubar</h3>
-                    <p>Zhanri: Aksion</p>
-                    <br>
-                    <i>Seasons 1</i>
-                </div>
+            </section>
+        </div>
+
+        <h2>Serialet e Tjera</h2>
+        <div class="movie-grid">
+            <div class="movie">
+                <img src="serialet/lacasadepapel.jpg" alt="Money Heist">
+                <h3>Money Heist</h3>
+                <p>Zhanri: Thriller</p>
+                <i>Seasons 5</i>
             </div>
-        </section>
-        
+            <div class="movie">
+                <img src="serialet/prisonbreak.jpg" alt="Prison Break">
+                <h3>Prison Break</h3>
+                <p>Zhanri: Drama</p>
+                <i>Seasons 5</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/tulsaking.jpg" alt="Tulsa King">
+                <h3>Tulsa King</h3>
+                <p>Zhanri: Drama</p>
+                <i>Seasons 2</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/outerbanks.jpg" alt="Outer Banks">
+                <h3>Outer Banks</h3>
+                <p>Zhanri: Drama</p>
+                <i>Seasons 4</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/dragonball.jpg" alt="Dragon Ball DAIMA">
+                <h3>Dragon Ball DAIMA</h3>
+                <p>Zhanri: Animation</p>
+                <i>Seasons 1</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/vikings.jpg" alt="Vikings">
+                <h3>Vikings</h3>
+                <p>Zhanri: History</p>
+                <i>Seasons 6</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/thepenguin.jpg" alt="The Penguin">
+                <h3>The Penguin</h3>
+                <p>Zhanri: Drama</p>
+                <i>Seasons 1</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/neymar.jpg" alt="Neymar: The Perfect Chaos">
+                <h3>Neymar: The Perfect Chaos</h3>
+                <p>Zhanri: Documentary</p>
+                <i>Seasons 1</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/arnold.jpg" alt="Arnold">
+                <h3>Arnlond</h3>
+                <p>Zhanri: Drama</p>
+                <i>Seasons 1</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/cage.jpg" alt="The Cage">
+                <h3>The Cage</h3>
+                <p>Zhanri: Sport</p>
+                <i>Seasons 1</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/halo.jpg" alt="Halo">
+                <h3>Halo</h3>
+                <p>Zhanri: Sci-Fi</p>
+                <i>Seasons 1</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/sweet.jpg" alt="Sweet">
+                <h3>Vikings</h3>
+                <p>Zhanri: Aksion</p>
+                <i>Seasons 1</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/thedayofjackal.jpg" alt="The Day Of Jackal">
+                <h3>The Day Of Jackal</h3>
+                <p>Zhanri: Drama</p>
+                <i>Seasons 1</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/thewitcher.jpg" alt="The Witcher">
+                <h3>The Witcher</h3>
+                <p>Zhanri: Drame</p>
+                <i>Seasons 2</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/titans.jpg" alt="Titans">
+                <h3>Titans</h3>
+                <p>Zhanri: Documentary</p>
+                <i>Seasons 4</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/flash.jpg" alt="Flash">
+                <h3>Flash</h3>
+                <p>Zhanri: Drama</p>
+                <i>Seasons 2</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/fallout.jpg" alt="Fallout">
+                <h3>Fallout</h3>
+                <p>Zhanri: Thriller</p>
+                <i>Seasons 2</i>
+            </div>
+            <div class="movie">
+                <img src="serialet/eco.jpg" alt="Eco">
+                <h3>Eco</h3>
+                <p>Zhanri: Sport</p>
+                <i>Seasons 6</i>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        const movieSlider = document.getElementById('serialetSlider');
+
+        movieSlider.addEventListener('mouseenter', () => {
+            movieSlider.style.animationPlayState = 'paused';
+        });
+
+        movieSlider.addEventListener('mouseleave', () => {
+            movieSlider.style.animationPlayState = 'running';
+        });
+    </script>
 </body>
 </html>

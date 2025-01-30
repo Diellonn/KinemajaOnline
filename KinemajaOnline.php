@@ -23,7 +23,7 @@
 </head>
 <body>
 <header>
-    <img src="image/logo.png" alt="">
+    <img src="image/logo.png" alt="Logo">
     <div class="nav-menu"> 
         <a href="#" id="homeLink">Ballina</a>
         <div class="dropdown">
@@ -37,16 +37,16 @@
                 <a href="?genre=Sport">Sport</a>
             </div>
         </div>
-        <script src="script.js"></script>
         <a href="seriale.html">Seriale</a>
         <a href="Kontakti.php">Kontakti</a>
+
     </div>
     <div class="search">
         <input type="search" placeholder="Kerko">
     </div>
     <?php if (isset($_SESSION['user_name'])): ?>
         <div class="loginform">
-            <span class="loginform"> <?php echo htmlspecialchars($_SESSION['user_name']); ?>!</span>
+            <span> <?php echo htmlspecialchars($_SESSION['user_name']); ?>!</span>
             <?php if ($_SESSION['role'] === 'admin'): ?>
                 <a href="manage.php">Edito</a>
             <?php endif; ?>
@@ -54,7 +54,7 @@
         </div>
     <?php else: ?>
         <div class="loginform">
-        <a href="login.php">Login</a>
+            <a href="login.php">Login</a>
         </div>
     <?php endif; ?>
 </header>

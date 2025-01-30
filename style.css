@@ -14,16 +14,14 @@ body {
 }
 header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 20px;
     background-color: rgba(51, 51, 51, 0.6);
-    backdrop-filter: blur(10px);
-    color: white;
+      
 }
 header img {
-    margin-left: 17px;
-    height: 60px;
-    
+    width: 150px;
 }
 .nav-menu {
     display: flex;
@@ -81,7 +79,7 @@ header img {
 }
 .loginform a:hover{
     background-color: white;
-    color: black;
+    color: white;
 }
 .home{
     display: flex;
