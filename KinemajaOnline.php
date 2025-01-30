@@ -20,6 +20,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KinemajaOnline</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+    @media (max-width: 768px) {
+        .nav-menu {
+            flex-direction: column;
+            align-items: center;
+        }
+        .nav-menu a {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .search input {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .loginform {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .movie-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 5px;
+        }
+        .movie {
+            width: 25%;
+            margin-bottom: 15px;
+
+        }
+        .movie img{
+            size: 10px;
+        }
+        .movie h3{
+        font-size: 11px;  
+        }
+        .movie p{
+            font-size: 11px;  
+        }
+    }
+    @media (max-width: 480px) {
+        header {
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .nav-menu {
+            margin-top: 10px;
+        }
+        .search input {
+            width: 100%;
+            margin-top: 15px;
+        }
+        .movie-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-between;
+        }
+        .movie {
+            width: 23%;
+        }
+    }
+    </style>
 </head>
 <body>
 <header>
@@ -46,7 +110,7 @@
     </div>
     <?php if (isset($_SESSION['user_name'])): ?>
         <div class="loginform">
-            <span> <?php echo htmlspecialchars($_SESSION['user_name']); ?>!</span>
+            <span class="loginform" style="color: white;"> <?php echo htmlspecialchars($_SESSION['user_name']); ?>!</span>
             <?php if ($_SESSION['role'] === 'admin'): ?>
                 <a href="manage.php">Edito</a>
             <?php endif; ?>
@@ -69,41 +133,6 @@
                     <p><a style="text-decoration:wavy;color:white;" href="movies.php?id=<?php echo $movie['id']; ?>">Shiko</a></p>
                 </div>
             <?php endforeach; ?>
-                <div class="movie">
-                    <img src="filmat/hacker.jpg" alt="Filmi 4">
-                    <h3>Hacker</h3>
-                    <p>Zhanri: Thriller-Crime</p>
-                </div>
-                <div class="movie">
-                    <img src="filmat/absolution.jpg" alt="Filmi 4">
-                    <h3>Absolution</h3>
-                    <p>Zhanri: Mister</p>
-                </div>
-                <div class="movie">
-                    <img src="filmat/thelittlething.jpg" alt="Filmi 4">
-                    <h3>The Little Thing</h3>
-                    <p>Zhanri: Crime</p>
-                </div>
-                <div class="movie">
-                    <img src="filmat/rockybalboa.jpg" alt="Filmi 4">
-                    <h3>Rocky Balboa</h3>
-                    <p>Zhanri: Sport-Aksion</p>
-                </div>
-                <div class="movie">
-                    <img src="filmat/mrmrssmith,jpg.jpg" alt="Filmi 4">
-                    <h3>Mr.& Mrs.Smith</h3>
-                    <p>Zhanri: Aksion-Komedi</p>
-                </div>
-                <div class="movie">
-                    <img src="filmat/titanic.jpg" alt="Filmi 4">
-                    <h3>Titanic</h3>
-                    <p>Zhanri: Romance-Adventure</p>
-                </div>
-                <div class="movie">
-                    <img src="filmat/fastfurious.jpg" alt="Filmi 4">
-                    <h3>Fast & Furious</h3>
-                    <p>Zhanri: Aksion-Crime</p>
-                </div>
     </div>
 </section>
 

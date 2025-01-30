@@ -79,7 +79,7 @@ header img {
 }
 .loginform a:hover{
     background-color: white;
-    color: white;
+    color: black;
 }
 .home{
     display: flex;
