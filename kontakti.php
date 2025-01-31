@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <?php if (isset($_SESSION['user_name'])): ?>
         <div class="loginform">
-            <span class="loginform"> <?php echo htmlspecialchars($_SESSION['user_name']); ?>!</span>
+            <span class="loginform" style="color: white;"> <?php echo htmlspecialchars($_SESSION['user_name']); ?>!</span>
             <?php if ($_SESSION['role'] === 'admin'): ?>
                 <a href="manage.php" class="admin-button">Edito</a>
             <?php endif; ?>
