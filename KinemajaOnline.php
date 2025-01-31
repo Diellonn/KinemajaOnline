@@ -101,7 +101,7 @@
                 <a href="?genre=Sport">Sport</a>
             </div>
         </div>
-        <a href="seriale.html">Seriale</a>
+        <a href="seriale.php">Seriale</a>
         <a href="Kontakti.php">Kontakti</a>
 
     </div>

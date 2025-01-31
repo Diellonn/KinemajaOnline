@@ -135,9 +135,19 @@ if (!isset($_SESSION['user_name'])) {
         <div class="search">
             <input type="search" placeholder="Kerko">
         </div>
+        <?php if (isset($_SESSION['user_name'])): ?>
+        <div class="loginform">
+            <span class="loginform" style="color: white;"> <?php echo htmlspecialchars($_SESSION['user_name']); ?>!</span>
+            <?php if ($_SESSION['role'] === 'admin'): ?>
+                <a href="manage.php">Edito</a>
+            <?php endif; ?>
+            <a href="logout.php">Logout</a>
+        </div>
+    <?php else: ?>
         <div class="loginform">
             <a href="login.php">Login</a>
         </div>
+    <?php endif; ?>
     </header>
 
     <section class="movies">
