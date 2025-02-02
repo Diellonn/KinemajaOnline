@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="nav-menu">
             <a href="KinemajaOnline.php">Ballina</a>
             <a href="#">Zhanri</a>
-            <a href="seriale.html">Seriale</a>
+            <a href="seriale.php">Seriale</a>
             <a href="#">Kontakti</a>
         </div>
         <div class="search">

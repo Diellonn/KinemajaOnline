@@ -129,7 +129,7 @@ if (!isset($_SESSION['user_name'])) {
                     <a href="#" data-genre="Sport">Sport</a>
                 </div>
             </div>
-            <a href="seriale.html">Seriale</a>
+            <a href="seriale.php">Seriale</a>
             <a href="kontakti.php">Kontakti</a>
         </div>
         <div class="search">
